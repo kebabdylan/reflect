@@ -1,0 +1,70 @@
+body {
+  background-color:#01244C;
+  background-image:url(https://becomingirish.nd.edu/images/login/blue-backing.png);
+  background-position:initial initial;
+  background-repeat:repeat no-repeat;
+  color:#FFFFFF;
+  font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+  line-height:1.4em;
+	padding:0px;
+		margin:0px;
+}
+
+div.flash{padding:0px; margin:0px 0px 10px 0px; background-color:#986200; text-align:center; border-bottom:thin solid #000}
+div.flash>div.msg{padding:10px; color:#fff}
+
+p.description{}
+p.status{color:#ccc; font-style:italic}
+
+.header{float:left;width:100%; border-bottom:2px solid #fff}
+	.header-text{font-size:1.4em; font-wieght:bold; float:left}
+	.header-date{font-size:1em; font-style:italic; font-wieght:bold; margin-left:10px; float:right }	
+	
+	.content {
+	 	border-left-color:#eee;
+	  border-left-style:solid;
+	  border-left-width:thin;
+	  float:left;
+	  margin-left:50px;
+	  padding:0 0 0 10px;
+	  width:95%;
+	}
+
+.content>.main{float:left;width:80%}
+	
+.footer{float:left;width:100%; border-top:thin solid #f2f2f2; text-align:center; margin-top:10px}
+	.footer-text{}		
+		
+		
+table{border:1px solid #ccc; width:80% }
+table td{border:none; text-align:left;padding:3px}
+table th{border:none; text-align:left; font-weight:bold; background-color:#336699; color:#f2f2f2 }		
+
+a{color:#FFF}		
+a:visited{color:#CCC}		
+
+
+.field{float:left; width:100%; margin-bottom:10px}
+
+
+
+input,select,textarea{font-size:1em; background-color:#f2f2f2;}
+
+label{float:left; font-weight:bold; font-size:1em; width:22%; text-align:left}
+
+input{padding:4px}
+select{padding:10px; margin:2px;}
+
+.top-menu{;float:right; width:90%; text-align:right}
+
+h1{}
+h2{}
+h3{}
+
+p{padding:0px; margin:0px}
+
+ul.topic-list{}
+	ul.topic-list > li{float:left; width:100%; list-style:none; margin-bottom:20px; border-bottom:thin solid #000066; padding:10px}
+		ul.topic-list > li span.topic{float:left; width:100%}
+		ul.topic-list > li span.topic-questions{float:left; width:100%}
+		ul.topic-list > li span.action{float:left; width:100%}

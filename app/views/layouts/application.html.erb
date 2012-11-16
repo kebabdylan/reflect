@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>onDeck</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "print", :media => "print" %>
+  <%= javascript_include_tag "application" %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+
+	<div class="flash">
+		<% if flash[:msg] %>
+			<div class="msg"><%= flash[:msg]%></div>
+		<% end %>
+	</div>
+	
+	<div class="header">
+		<span class="header-text">Reflect </span>
+		<span class="header-date">
+			<% time = Time.new  %>
+			<%= time.strftime("%m-%d-%Y") %>
+		</span>
+	</div>
+	
+
+	
+
+	<div class="content">
+
+		<div class="top-menu">
+
+		</div>
+	
+		<%= yield %>
+	</div>
+	
+	<div class="footer">
+		<p>Copyright 2012 | Me</p>
+		<p><%= link_to "logout", "/login/logout" %>
+	</div>
+</body>
+</html>
