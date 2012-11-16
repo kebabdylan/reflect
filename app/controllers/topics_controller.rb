@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+before_filter :restrict_to_admin
+
   # GET /topics
   # GET /topics.json
   def index

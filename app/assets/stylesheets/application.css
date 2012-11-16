@@ -44,16 +44,40 @@ a{color:#FFF}
 a:visited{color:#CCC}		
 
 
-.field{float:left; width:100%; margin-bottom:10px}
+/* FORMS */
+/********************/
 
+p.form-row{float:left; width:100%; margin-bottom:6px;}
+p.form-row-submit{float:left; margin-left:160px}
 
+label {
+	  float:left;
+	  font-size:1em;
+	  font-weight:bold;
+	  margin-right:10px;
+	  text-align:right;
+	  width:150px;
+	  }
 
 input,select,textarea{font-size:1em; background-color:#f2f2f2;}
 
-label{float:left; font-weight:bold; font-size:1em; width:22%; text-align:left}
-
 input{padding:4px}
 select{padding:10px; margin:2px;}
+
+textarea {
+  background-color:#EEEEEE;
+  font-size:0.7em;
+  padding:10px;
+  width:96%;
+}
+
+
+
+
+.field{float:left; width:100%; margin-bottom:10px}
+
+
+/**************************************/
 
 .top-menu{;float:right; width:90%; text-align:right}
 
@@ -63,8 +87,25 @@ h3{}
 
 p{padding:0px; margin:0px}
 
+li h3{margin-bottom:0px}
+
 ul.topic-list{}
 	ul.topic-list > li{float:left; width:100%; list-style:none; margin-bottom:20px; border-bottom:thin solid #000066; padding:10px}
 		ul.topic-list > li span.topic{float:left; width:100%}
 		ul.topic-list > li span.topic-questions{float:left; width:100%}
 		ul.topic-list > li span.action{float:left; width:100%}
+		
+		
+		
+		
+		.panels{float:left; width:100%}
+		.panels>.main{width:65%; float:left}
+		.panels>.side{width:30%; float:right; border:thin solid #ccc; background-color:#f2f2f2; color:#000000; margin:1%}
+		.panels>.side a{color:#cc0000}
+		.panels>.side a:visited{color:#cc0099}	
+
+
+			ul.entry-list{padding:5px; list-style:none}
+				ul.entry-list li{}
+			ul.topic-list{padding:5px; list-style:none}
+				ul.topic-list li{}		

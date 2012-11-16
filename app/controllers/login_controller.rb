@@ -16,7 +16,7 @@ def login
 end
 
 def logout
-  session[:user] = nil
+  	session[:user] = nil
     session[:userid] = nil
 
 	  flash[:msg] = "Goodbye, you have been logged out"
@@ -39,12 +39,13 @@ def authenticate
       @thisUser.tick
       session[:userid] = @thisUser.id
       session[:is_admin] = @thisUser.is_admin	  
+	  
 	  flash[:msg] = "Welcome back, you have been logged in"
-	  		  redirect_to goto_url
+	    redirect_to goto_url
     else
       session[:user] = nil
-	  	  flash[:msg] = "Username and password do not match"
-		  redirect_to "/login"
+	  flash[:msg] = "Username and password do not match"
+		redirect_to "/login"
     end
     
 

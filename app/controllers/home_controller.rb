@@ -31,12 +31,6 @@ class HomeController < ApplicationController
 	end
 	
 	
-def restrict
-	unless session[:userid]
-		flash[:requested_url] = "#{params[:controller]}/#{params[:action]}"
-		flash[:msg] = "You must be logged in to access the that resource"
-		redirect_to "/login" 
-	end
-end	
+
   
 end

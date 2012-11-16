@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+	
+	before_filter restrict_to_admin
+
+
   # GET /users
   # GET /users.json
   def index

@@ -7,9 +7,11 @@ Reflect::Application.routes.draw do
 
   resources :users
 
+  match '/logout' => 'login#logout'
   match ':controller/:action/topic/:topic'
   match ':controller/:action'
   match '/:controller' => ':controller#index'
+
   match '/' => 'home#index'
 
   # The priority is based upon order of creation:

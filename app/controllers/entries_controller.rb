@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-
+	before_filter :restrict
 
   def index
 
@@ -29,14 +29,15 @@ class EntriesController < ApplicationController
 
 
   def save
-    @entry = Entry.find(params[:id])
+    @entry = Entry.find_or_create_by_topic_id_and_user_id( params[:topic], session[:userid])
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
         format.html { redirect_to "/entries", :notice => 'Entry was successfully updated.' }
+		flash[:msg] = "You have updated '#{@entry.topic.title}' successfully"
         format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "update" }
         format.json { render :json => @entry.errors, :status => :unprocessable_entity }
       end
     end

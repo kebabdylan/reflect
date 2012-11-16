@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :restrict
   # GET /comments
   # GET /comments.json
   def index

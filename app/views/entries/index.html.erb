@@ -1,1 +1,35 @@
-<%= debug @entries %>
+<h2>Your Topics to Complete</h2>
+<div class="panels">
+	
+<div class="main">
+
+<ul class="entry-list">
+	<% @entries.each do |entry|%>	
+	<li>
+		<h3><%= entry.topic.title %>	</h3>
+		<p>Started on <%=entry.created_at%> and updated on <%=entry.updated_at%></p>
+		<p><%= link_to "Continue", :controller=>"entries", :action=>"update", :topic=>entry.topic.id %></p>
+
+			
+	</li>
+	<% end %>
+</ul>
+
+</div>
+
+
+<div class="side">
+	<ul class="entry-list">
+		<% @topics.each do |topic|%>	
+		<li>
+			<h3><%= topic.title %>	</h3>
+			<p><%= link_to "Start", :controller=>"entries", :action=>"update", :topic=>topic.id %></p>
+			<p>Due by <%= topic.due_on%>
+			
+		</li>
+		<% end %>
+	</ul>
+
+</div>
+
+</div>
