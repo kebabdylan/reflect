@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def restrict_to_admin
 	unless session[:is_admin]
-		flash[:msg] = "You must be an admin in to access that resource"
+		flash[:msg] = "You must be an admin [#{session[:is_admin]}] in to access that resource"
 		redirect_to "/login" 
 	end  
   end

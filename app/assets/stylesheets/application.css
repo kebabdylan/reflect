@@ -1,47 +1,101 @@
 body {
-  background-color:#01244C;
+
   background-image:url(https://becomingirish.nd.edu/images/login/blue-backing.png);
+  background-color:#12131f;
   background-position:initial initial;
   background-repeat:repeat no-repeat;
-  color:#FFFFFF;
+  color:#fcf9ed;
   font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
   line-height:1.4em;
 	padding:0px;
-		margin:0px;
-}
-
-div.flash{padding:0px; margin:0px 0px 10px 0px; background-color:#986200; text-align:center; border-bottom:thin solid #000}
-div.flash>div.msg{padding:10px; color:#fff}
-
-p.description{}
-p.status{color:#ccc; font-style:italic}
-
-.header{float:left;width:100%; border-bottom:2px solid #fff}
-	.header-text{font-size:1.4em; font-wieght:bold; float:left}
-	.header-date{font-size:1em; font-style:italic; font-wieght:bold; margin-left:10px; float:right }	
-	
-	.content {
-	 	border-left-color:#eee;
-	  border-left-style:solid;
-	  border-left-width:thin;
-	  float:left;
-	  margin-left:50px;
-	  padding:0 0 0 10px;
-	  width:95%;
+	margin:0px;
 	}
 
-.content>.main{float:left;width:80%}
+div.flash {
+  background-color:#f4f5fd;
+  border-bottom-color:#000000;
+  border-bottom-style:solid;
+  border-bottom-width:thin;
+  margin:0;
+  padding:0;
+  text-align:center;
+}
+
+	div.flash>div.msg{padding:10px; color:#000}
+
+
+.header {
+  background-color:#34374e;
+  border-bottom-color:#12131f;
+  border-bottom-style:solid;
+  border-bottom-width:4px;
+  float:left;
+  margin:0;
+  min-height:100px;
+  width:100%;
+}
+
+	.header-text {
+	  background-color:#f5eed0;
+	  border-bottom-left-radius:0;
+	  border-bottom-right-radius:6px;
+	  border-top-left-radius:0;
+	  border-top-right-radius:6px;
+	  color:#454968;
+	  float:left;
+	  font-size:2.5em;
+	  margin-top:20px;
+	  min-width:33%;
+	  padding:15px 100px 15px 15px;
+	}
+
+	.header-date{font-size:1em; font-style:italic; font-wieght:bold; margin-right:10px; float:right }	
 	
-.footer{float:left;width:100%; border-top:thin solid #f2f2f2; text-align:center; margin-top:10px}
+.shell{float:left; width:100%}
+
+.top-menu{;float:right; width:100%; text-align:right}
+
+.content {
+	  float:left;
+	  margin-left:3%;
+	  margin-left:3%;
+	  padding:0% 2% 2% 2%;
+	  width:90%;
+	  border:thin solid #000;
+	  border-width: 0px 2px 2px 2px;
+	  background-color:#454968;
+	}
+
+	.content>.main{float:left;width:80%}
+	
+
+.footer{
+	float:left;
+	width:100%; 
+	
+	text-align:center; 
+	margin-top:10px; 
+	margin-left:2%;
+	margin-right:2%}
 	.footer-text{}		
 		
 		
-table{border:1px solid #ccc; width:80% }
-table td{border:none; text-align:left;padding:3px}
-table th{border:none; text-align:left; font-weight:bold; background-color:#336699; color:#f2f2f2 }		
+table{border:1px solid #ccc; width:98% }
+table td{text-align:left;padding:4px; border-bottom:thin solid #34374E}
 
-a{color:#FFF}		
-a:visited{color:#CCC}		
+table tr{}
+
+table th {
+  background-color:#34374E;
+  border:none;
+  color:#F2F2F2;
+  font-weight:bold;
+  padding:4px;
+  text-align:left;
+	}
+
+a{color:#D78A00}		
+a:visited{color:#D78A00}		
 
 
 /* FORMS */
@@ -61,15 +115,19 @@ label {
 
 input,select,textarea{font-size:1em; background-color:#f2f2f2;}
 
-input{padding:4px}
+input{padding:4px; border-radius:4px}
 select{padding:10px; margin:2px;}
 
 textarea {
-  background-color:#EEEEEE;
-  font-size:0.7em;
+  background-color:#bfc1d0;
+  border-radius:6px;
+  border:2px solid #34374e;
+  font-size:1em;
   padding:10px;
   width:96%;
 }
+
+
 
 
 
@@ -79,10 +137,10 @@ textarea {
 
 /**************************************/
 
-.top-menu{;float:right; width:90%; text-align:right}
+
 
 h1{}
-h2{}
+h2{color:#f4f5fd}
 h3{}
 
 p{padding:0px; margin:0px}
@@ -99,13 +157,21 @@ ul.topic-list{}
 		
 		
 		.panels{float:left; width:100%}
-		.panels>.main{width:65%; float:left}
-		.panels>.side{width:30%; float:right; border:thin solid #ccc; background-color:#f2f2f2; color:#000000; margin:1%}
-		.panels>.side a{color:#cc0000}
-		.panels>.side a:visited{color:#cc0099}	
-
+		.panels>.main{width:70%; float:left}
+		.panels>.side{width:25%; float:right; border:2px solid 12131f; background-color:#bfc1d0; color:#34374e; margin:1%; border-radius:6px;}
+		.panels>.side h2{color:#454968; margin:10px 0px 2px 4px; }
+	
 
 			ul.entry-list{padding:5px; list-style:none}
-				ul.entry-list li{}
+		
+			ul.entry-list li {
+			  border-bottom-color:#999999;
+			  border-bottom-style:solid;
+			  border-bottom-width:thin;
+			  padding:0px 0px 2px 0px;
+			}
+			ul.entry-list li a{text-decoration:none; float:right; font-weight:bold};		
 			ul.topic-list{padding:5px; list-style:none}
 				ul.topic-list li{}		
+
+

@@ -26,20 +26,34 @@
 	</div>
 	
 
-	
+	<div class="shell">
 
 	<div class="content">
 
 		<div class="top-menu">
-
+			<%= link_to "Home", "/" %> | 
+			<%= link_to "Entries", "/entries" %> |
+			<% if session[:is_admin]%> 
+				<%= link_to "Topics", "/topics" %> | 
+				<%= link_to "Users", "/users" %> | 
+			<% end%>
+			<%= link_to "Logout", "/logout" %>
 		</div>
 	
 		<%= yield %>
-	</div>
 	
+	
+
+	
+
+	</div>
+
 	<div class="footer">
 		<p>Copyright 2012 | Me</p>
 		<p><%= link_to "logout", "/login/logout" %>
 	</div>
+
+</div>	
+	
 </body>
 </html>

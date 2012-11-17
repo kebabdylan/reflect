@@ -76,7 +76,9 @@ class EntriesController < ApplicationController
     @entry.destroy
 
     respond_to do |format|
-      format.html { redirect_to entries_url }
+	flash[:msg] = "Entry has been deleted"
+	  format.html { redirect_to "/entries" }
+	  
       format.json { head :no_content }
     end
   end

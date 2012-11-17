@@ -1,10 +1,9 @@
 Reflect::Application.routes.draw do
-  resources :comments
+  #resources :comments
 
-  resources :entries
+  #resources :entries
 
   resources :topics
-
   resources :users
 
   match '/logout' => 'login#logout'

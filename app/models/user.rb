@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :is_admin, :last_login, :last_name, :login_count, :password
-  
+  attr_accessible :email, :first_name, :is_admin, :last_login, :last_name, :login_count, :password  
   has_many :entries
   
 

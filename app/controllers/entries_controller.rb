@@ -43,4 +43,17 @@ class EntriesController < ApplicationController
     end
   end
 
+
+
+  def delete
+	@entry = Entry.find_by_id_and_user_id( params[:eid], session[:userid]) 
+    @entry.destroy
+
+
+	flash[:msg] = "Entry has been deleted"
+ 	redirect_to "/entries" 
+
+  end
+
+
  end

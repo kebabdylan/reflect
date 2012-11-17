@@ -11,31 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
+  <div class="form-row">
+    <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
+  <div class="form-row">
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="form-row">
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
+  <div class="form-row">
+    <%= f.label :password %>
     <%= f.text_field :password %>
   </div>
 
-  <div class="field">
+  <div class="form-row">
 
     <%= f.check_box :is_admin %>
-	    <%= f.label :is_admin, "This user is an admin" %>
+	    <%= f.label :is_admin, "This user is an admin", :class=>"label-right" %>
   </div>
 
 
-  <div class="actions">
+  <div class="form-row-submit">
     <%= f.submit %>
   </div>
 <% end %>
