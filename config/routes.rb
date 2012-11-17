@@ -1,5 +1,5 @@
 Reflect::Application.routes.draw do
-  #resources :comments
+  resources :comments
 
   #resources :entries
 

@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :restrict
+  before_filter :restrict_to_admin
   # GET /comments
   # GET /comments.json
   def index
@@ -58,7 +58,7 @@ class CommentsController < ApplicationController
   # PUT /comments/1.json
   def update
     @comment = Comment.find(params[:id])
-
+	
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
         format.html { redirect_to @comment, :notice => 'Comment was successfully updated.' }

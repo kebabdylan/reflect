@@ -3,10 +3,10 @@ class EntriesController < ApplicationController
 
   def index
 
-@topics = Topic.all   
+  @topics = Topic.all   
+  
   if session[:is_admin]
 	  @entries = Entry.all
-
   else
 	  @entries = Entry.where("user_id = ?", session[:userid])
   end
@@ -26,7 +26,9 @@ class EntriesController < ApplicationController
     @entry = Entry.find_or_create_by_topic_id_and_user_id( params[:topic], session[:userid])
   end
 
-
+  def view	
+    @entry = Entry.find_by_topic_id_and_user_id( params[:topic], session[:userid])
+  end
 
   def save
     @entry = Entry.find_or_create_by_topic_id_and_user_id( params[:topic], session[:userid])

@@ -10,10 +10,10 @@
 			 <% if entry.topic %>
 				<h3><%= entry.topic.title %>	</h3>
 				<p>Started on <%=entry.created_at%> and updated on <%=entry.updated_at%></p>
-				<p><%= link_to "Continue", :controller=>"entries", :action=>"update", :topic=>entry.topic.id %></p>
+				<p><%= link_to "#{entry.link[:label]}", :controller=>"entries", :action=>"#{entry.link[:action]}", :topic=>entry.topic.id %></p>
 
 			<% else%>
-			<%= debug entry %>		
+
 							<p><%= link_to "Delete", :controller=>"entries", :action=>"delete", :eid=>entry.id %></p>
 			<% end %>
 			
@@ -28,7 +28,7 @@
 
 <div class="side">
 	<h2>Topics</h2>
-	<ul class="entry-list">
+	<ul class="topic-list">
 		<% @topics.each do |topic|%>	
 		<li>
 			<h3><%= topic.title %>	</h3>

@@ -165,13 +165,18 @@ ul.topic-list{}
 			ul.entry-list{padding:5px; list-style:none}
 		
 			ul.entry-list li {
+			  
+			}
+
+			
+			ul.topic-list{padding:5px; list-style:none}
+		
+			ul.topic-list li {
 			  border-bottom-color:#999999;
 			  border-bottom-style:solid;
 			  border-bottom-width:thin;
 			  padding:0px 0px 2px 0px;
 			}
-			ul.entry-list li a{text-decoration:none; float:right; font-weight:bold};		
-			ul.topic-list{padding:5px; list-style:none}
-				ul.topic-list li{}		
-
+			ul.topic-list li a{text-decoration:none; float:right; font-weight:bold};		
+			
 
