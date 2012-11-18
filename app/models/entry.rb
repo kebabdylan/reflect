@@ -7,7 +7,9 @@ class Entry < ActiveRecord::Base
   validates_presence_of :user, :topic
   
 
-
+  def self.get_active (userid)
+    Entry.where("user_id = ? and is_complete <> 1",userid )
+  end
 
 
   def link

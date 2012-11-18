@@ -1,23 +1,21 @@
 class EntriesController < ApplicationController
+  #only allow auth users
 	before_filter :restrict
 
   def index
 
-  @topics = Topic.all   
+    @topics = Topic.all   
   
-  if session[:is_admin]
-	  @entries = Entry.all
-  else
-	  @entries = Entry.where("user_id = ?", session[:userid])
-  end
+    if session[:is_admin]
+  	  @entries = Entry.all
+    else
+  	  @entries = Entry.where("user_id = ?", session[:userid])
+    end
 	
 		
-	if params.has_key? "pop"
-	
-	render :layout => "minimal"
-	
-	end
-
+	  if params.has_key? "pop"
+	    render :layout => "minimal"
+      end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -37,9 +35,10 @@ class EntriesController < ApplicationController
   def view	
     @entry = Entry.find_by_topic_id_and_user_id( params[:topic], session[:userid])
 
-	if params.has_key? "pop"
-		render :layout => "minimal"
-	end
+  	if params.has_key? "pop"
+  		render :layout => "minimal"
+  	end
+
   end
 
 
@@ -49,7 +48,7 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
         format.html { redirect_to "/entries", :notice => 'Entry was successfully updated.' }
-		flash[:msg] = "You have updated '#{@entry.topic.title}' successfully"
+        flash[:msg] = "You have updated '#{@entry.topic.title}' successfully"
         format.json { head :no_content }
       else
         format.html { render :action => "update" }
@@ -61,13 +60,11 @@ class EntriesController < ApplicationController
 
 
   def delete
-	@entry = Entry.find_by_id_and_user_id( params[:eid], session[:userid]) 
+	  @entry = Entry.find_by_id_and_user_id( params[:eid], session[:userid]) 
     @entry.destroy
 
-
-	flash[:msg] = "Entry has been deleted"
- 	redirect_to "/entries" 
-
+	  flash[:msg] = "Entry has been deleted"
+ 	  redirect_to "/entries" 
   end
 
 

@@ -1,13 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  title: MyString
-  questions: MyText
-  due_on: 2012-11-15
+future:
+  title: My Future Topic
+  questions: when will this show up
+  due_on: 2012-12-15
+  active_on: 2012-12-1
+
+current:
+  title: My Current Topic
+  questions: Is this showing up now?
+  due_on: 2012-11-25
   active_on: 2012-11-15
 
-two:
-  title: MyString
-  questions: MyText
-  due_on: 2012-11-15
-  active_on: 2012-11-15
+past:
+  title: My Past Topic
+  questions: Why did you not do this
+  due_on: 2012-10-25
+  active_on: 2012-10-15

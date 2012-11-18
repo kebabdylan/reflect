@@ -18,4 +18,9 @@ class EntryTest < ActiveSupport::TestCase
     assert_equal 'update', i_links[:action]
   end
 
+  test "active" do
+    entries = entries(:complete)
+    assert_not_nil entries
+  end
+
 end
