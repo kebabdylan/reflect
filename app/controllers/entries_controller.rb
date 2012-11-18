@@ -11,24 +11,37 @@ class EntriesController < ApplicationController
 	  @entries = Entry.where("user_id = ?", session[:userid])
   end
 	
+		
+	if params.has_key? "pop"
 	
+	render :layout => "minimal"
+	
+	end
+
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @entries }
     end
+    
   end
 
 
 
-
+  
   def update	
     @entry = Entry.find_or_create_by_topic_id_and_user_id( params[:topic], session[:userid])
   end
 
+
   def view	
     @entry = Entry.find_by_topic_id_and_user_id( params[:topic], session[:userid])
+
+	if params.has_key? "pop"
+		render :layout => "minimal"
+	end
   end
+
 
   def save
     @entry = Entry.find_or_create_by_topic_id_and_user_id( params[:topic], session[:userid])

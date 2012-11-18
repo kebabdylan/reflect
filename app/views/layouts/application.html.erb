@@ -19,10 +19,7 @@
 	
 	<div class="header">
 		<span class="header-text">Reflect </span>
-		<span class="header-date">
-			<% time = Time.new  %>
-			<%= time.strftime("%m-%d-%Y") %>
-		</span>
+
 	</div>
 	
 
@@ -50,10 +47,10 @@
 
 	<div class="footer">
 		<p>Copyright 2012 | Me</p>
-		<p><%= link_to "logout", "/login/logout" %>
+	<%= debug params %>	
 	</div>
 
 </div>	
-	
+
 </body>
 </html>

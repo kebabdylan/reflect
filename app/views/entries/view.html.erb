@@ -1,0 +1,39 @@
+
+
+<h1><%= @entry.topic.title %></h1>
+
+
+
+<div class='panels'>
+
+	<div class="main">
+		<h3>Questions to Consider</h3>
+		<p>
+			<%= @entry.topic.questions %>
+		</p>
+
+		<h3>Your Response</h3>
+		<p><%= @entry.content %></p>
+		
+	</div>
+	
+	<div class="side">
+	<h2>Comments</h2>	
+	
+	<ul class="comment-list">
+	<% if @entry.comments %>
+		<% @entry.comments.each do |c| %>
+			<li>
+				<p><%= c.content %></p>
+				<p> added by <%= c.user.email %> 
+			</li>
+		<%end%>
+		
+	<% else %>
+		<li>No comments yet</li>
+	<% end%>	
+	</ul>
+
+	</div>	
+	
+</div>

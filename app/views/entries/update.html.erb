@@ -1,0 +1,33 @@
+<h2><%= @entry.topic.title %></h2>
+
+<p>Please reflect of the following:</p>
+
+<p><i><%= @entry.topic.questions %></i></p>
+
+
+<%= form_for(@entry, :url=> {:controller=>"entries", :action=>"save", :topic	=> @entry.topic.id} ) do |f| %>
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+      <% @entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_area :content %>
+  </div>
+	 
+	 <div class="field">
+		 <%= f.check_box :is_complete %>
+		 I am don with this entry!
+	 </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ 
