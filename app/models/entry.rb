@@ -11,6 +11,7 @@ class Entry < ActiveRecord::Base
 
 
   def link
+  
   if self.is_complete
 		  {:action=>"view", :label=>"View Entry"}
 	  else

@@ -2,10 +2,10 @@
 
 one:
   content: MyText
-  user: 
-  entry: 
+  user: 1
+  entry: 1
 
 two:
   content: MyText
-  user: 
-  entry: 
+  user: 1
+  entry: 1

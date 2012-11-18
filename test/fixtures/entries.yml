@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  content: MyText
-  user: 
-  topic: 
+complete:
+  content: MyCompleteText
+  user: 1
+  topic: 1
+  is_complete: true
 
-two:
-  content: MyText
-  user: 
-  topic: 
+incomplete:
+  content: My incomplete text
+  user: 1
+  topic: 2
+  is_complete: false
