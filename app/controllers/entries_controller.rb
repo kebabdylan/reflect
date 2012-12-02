@@ -7,7 +7,7 @@ class EntriesController < ApplicationController
     @topics = Topic.all   
   
     if session[:is_admin]
-  	  @entries = Entry.all
+      @entries = Entry.where("is_complete not null and user_id <> ?",  session[:userid])
     else
   	  @entries = Entry.where("user_id = ?", session[:userid])
     end
@@ -26,6 +26,26 @@ class EntriesController < ApplicationController
 
 
 
+  def saveComment
+    params[:user_id] = session[:userid]
+    @comment = Comment.new(params[:comment])
+    @comment.save
+    render :json => @comment
+  end
+
+
+  def comments
+    @comments = Comment.where("entry_id = ?", params[:entry_id]) 
+
+    respond_to do |format|
+      format.html {render :layout=>'xhr'}
+      format.json { render :json => @comments }
+    end
+  end
+
+
+
+
   
   def update	
     @entry = Entry.find_or_create_by_topic_id_and_user_id( params[:topic], session[:userid])
@@ -33,7 +53,17 @@ class EntriesController < ApplicationController
 
 
   def view	
-    @entry = Entry.find_by_topic_id_and_user_id( params[:topic], session[:userid])
+    
+    if params.has_key?("userid")
+        @entry = Entry.find_by_topic_id_and_user_id( params[:topic], params[:userid])
+    else
+        @entry = Entry.find_by_topic_id_and_user_id( params[:topic], session[:userid])
+    end
+    
+    @comment = Comment.new
+    @comment.entry_id = @entry.id
+    @comment.user_id = session[:userid]
+
 
   	if params.has_key? "pop"
   		render :layout => "minimal"

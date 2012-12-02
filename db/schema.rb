@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121117131738) do
+ActiveRecord::Schema.define(:version => 20121202163306) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20121117131738) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.boolean  "is_complete"
+    t.boolean  "is_reviewed"
   end
 
   add_index "entries", ["topic_id"], :name => "index_entries_on_topic_id"

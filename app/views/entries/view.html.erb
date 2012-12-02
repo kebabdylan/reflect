@@ -15,25 +15,67 @@
 		<h3>Your Response</h3>
 		<p><%= @entry.content %></p>
 		
+		<h2>Comments [ <%= @entry.comments.length %> ]</h2>			
+			<div id="comment-list">loading...</div>	
+
+
+
+		<%= form_for @comment, :url=>'/entries/saveComment', :remote=>true do |f| %>
+			<h3>Add A Comment</h3>
+	    	<div class="form-row">
+	    		<%=  f.text_area :content, :rows=>3 %>
+	    	</div>
+		
+			 <%= f.hidden_field :entry_id %>
+		 	<%= f.hidden_field :user_id %>
+		
+		
+	    	<div class="form-row">
+	    		<%= f.submit %>
+	    	</div>
+	  <% end %>
+		
+		
+		
+		
+		
 	</div>
 	
 	<div class="side">
-	<h2>Comments</h2>	
-	
-	<ul class="comment-list">
-	<% if @entry.comments %>
-		<% @entry.comments.each do |c| %>
-			<li>
-				<p><%= c.content %></p>
-				<p> added by <%= c.user.email %> 
-			</li>
-		<%end%>
-		
-	<% else %>
-		<li>No comments yet</li>
-	<% end%>	
-	</ul>
 
-	</div>	
+		<h2>Contriburtor</h2>	
+		<ul class="comment-list">
+			<li><%= "#{@entry.user.first_name} #{@entry.user.last_name}" %></li>
+			<li><%= @entry.user.email %></li>
+		</ul>
+
+
+
+	
 	
 </div>
+
+
+<script language="JavaScript">
+//alert('boo');
+
+	
+	$(document).ready(function(){
+		refreshComments();
+
+		$("#new_comment").bind("ajax:success", refreshComments ).bind("ajax:error", function(){alert('error')});
+		
+		function refreshComments(){
+			//alert('loading comments...');
+			xhrLoader.load('#comment-list', "/entry/<%=@entry.id%>/comments");
+			$('#comment_content').val("");
+		}
+
+	});
+	
+	
+
+	
+	
+	
+</script>

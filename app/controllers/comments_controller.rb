@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :restrict_to_admin
+  layout 'xhr', :only=>[:get_for_entry]
   # GET /comments
   # GET /comments.json
   def index
@@ -10,6 +11,8 @@ class CommentsController < ApplicationController
       format.json { render :json => @comments }
     end
   end
+
+
 
   # GET /comments/1
   # GET /comments/1.json
@@ -38,8 +41,13 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+
+
+
   # POST /comments
   # POST /comments.json
+
+
   def create
     @comment = Comment.new(params[:comment])
 

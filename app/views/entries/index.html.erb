@@ -8,15 +8,15 @@
 	<li>
 		
 			 <% if entry.topic %>
-				<h3><%= entry.topic.title %>	</h3>
+				<h3><%= entry.topic.title %> by <%= entry.user.email%> </h3>
 				<p>Started on <%=entry.created_at%> and updated on <%=entry.updated_at%></p>
-				<p><%= link_to "#{entry.link[:label]}", :controller=>"entries", :action=>"#{entry.link[:action]}", :topic=>entry.topic.id %></p>
+				<p><%= link_to "#{entry.link[:label]}", :controller=>"entries", :action=>"#{entry.link[:action]}", :userid=>entry.user.id, :topic=>entry.topic.id %></p>
 
 			<% else%>
-
-							<p><%= link_to "Delete", :controller=>"entries", :action=>"delete", :eid=>entry.id %></p>
+				<p><%= link_to "Delete", :controller=>"entries", :action=>"delete", :eid=>entry.id %></p>
 			<% end %>
-			
+					
+					
 
 			
 	</li>
@@ -42,3 +42,4 @@
 </div>
 
 </div>
+

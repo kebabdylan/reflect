@@ -17,7 +17,7 @@ class Entry < ActiveRecord::Base
   if self.is_complete
 		  {:action=>"view", :label=>"View Entry"}
 	  else
-	  	  {:action=>"update", :label=>"Complete this entry now"}
+	    {:action=>"update", :label=>"Complete this entry now"}
 	  end
   end
   

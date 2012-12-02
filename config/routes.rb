@@ -10,6 +10,7 @@ Reflect::Application.routes.draw do
   match ':controller/:action/topic/:topic'
   match ':controller/:action'
   match '/:controller' => ':controller#index'
+  match '/entry/:entry_id/comments' => 'entries#comments'
 
   match '/' => 'home#index'
 

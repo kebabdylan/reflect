@@ -1,11 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  content: MyText
+  content: e1u1
   user: 1
   entry: 1
 
 two:
-  content: MyText
+  content: e1u1
   user: 1
   entry: 1
+
+three:
+  content: e1u2
+  user: 2
+  entry: 1
+  
+four:
+  content: e2u1
+  user: 1
+  entry: 2  
+
+five:
+  content: e3u2
+  user: 2
+  entry: 3  
+  
