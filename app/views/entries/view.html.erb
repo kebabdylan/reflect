@@ -9,7 +9,7 @@
 	<div class="main">
 		<h3>Questions to Consider</h3>
 		<p>
-			<%= @entry.topic.questions %>
+			<%= simple_format(@entry.topic.questions) %>
 		</p>
 
 		<h3>Your Response</h3>

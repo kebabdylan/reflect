@@ -46,8 +46,11 @@
 	</div>
 
 	<div class="footer">
-		<p>Copyright 2012 | Me</p>
-	<%= debug params %>	
+		<p>Copyright 2012  
+			<% if session.has_key? "email" %>
+			| Logged in as <%= session[:email] %>
+			<% end %>
+		</p>
 	</div>
 
 </div>	

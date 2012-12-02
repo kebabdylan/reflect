@@ -38,7 +38,8 @@ def authenticate
     if @thisUser
       @thisUser.tick
       session[:userid] = @thisUser.id
-      session[:is_admin] = @thisUser.is_admin	  
+      session[:is_admin] = @thisUser.is_admin
+      session[:email] = @thisUser.email	  
 	  #session[:is_admin] = true	  
 	  flash[:msg] = "Welcome back, you have been logged in"
 	    redirect_to goto_url

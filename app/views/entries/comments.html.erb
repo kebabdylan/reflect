@@ -1,12 +1,15 @@
 <% if @comments.length.to_i > 0 %>
-
+<ul class="pretty-list">
 	<% @comments.each do |comment| %>
-		<p><%= comment.content %>
+		<li>
+			<p>
+			<%= comment.content %>
 			<br/>
-			-- <%= comment.user.email %>
-		</p>
+				-- <%= comment.user.email %>
+			</p>
+		</li>
 	<% end %>
-
+</ul>
 <% else %>	
 
 	<p>No comments yet</p>
