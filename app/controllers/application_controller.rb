@@ -17,13 +17,28 @@ class ApplicationController < ActionController::Base
   end	
 
   def setup
-    me = User.new
-    me.first_name = "Jonathan"
-    me.last_name = "Arp"
-    me.email="jarp@nd.edu"
-    me.is_admin = true
-    me.password="farkle"
-    me.save
+    
+    # create admin user
+    #me = User.new
+    #me.first_name = "Jonathan"
+    #me.last_name = "Arp"
+    #me.email="jarp@nd.edu"
+    #me.is_admin = true
+    #me.password="farkle"
+    #me.save
+  
+    #create a topic
+    topic = Topic.new
+    topic.title = "Why are you here?"
+    topic.questions = "Why are you taking this class? What do you hope to get out of it?"
+    topic.due_on='1/20/2013'
+    topic.active_on='12/1/2012'
+    
+  
+  
+  
   end
+  
+  
 
 end
