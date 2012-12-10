@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
 	def index
     @user = User.find(session[:userid])
-    entryIDs = Entry.where("user_id = ? and is_complete <> true",[session[:userid]]).map {|x| x.id}
+    entryIDs = Entry.where("user_id = ?",[session[:userid]]).map {|x| x.id}
 	  
     #get entries that need to be completed  
     @active_entries = Entry.get_active(session[:userid])
