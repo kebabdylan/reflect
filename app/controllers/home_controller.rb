@@ -5,7 +5,6 @@ class HomeController < ApplicationController
 
 	def index
     @user = User.find(session[:userid])
-	  
     entryIDs = Entry.where("user_id = ? and is_complete <> true",[session[:userid]]).map {|x| x.id}
 	  
     #get entries that need to be completed  
@@ -17,28 +16,20 @@ class HomeController < ApplicationController
       format.html # index.html.erb
       format.json { render :json => @user }
     end
-	
   end
 	
 
 	def topics
-	
-	@topics = Topic.all
-    
+	@topics = Topic.all  
 	respond_to do |format|
       format.html # topics.html.erb
       format.json { render :json => @topic }
     end
 	end
 	
-	
 
 	def entries
-		
-	
 	end
-	
-	
 
   
 end
