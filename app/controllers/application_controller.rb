@@ -16,5 +16,14 @@ class ApplicationController < ActionController::Base
   	end
   end	
 
+  def setup
+    me = User.new
+    me.first_name = "Jonathan"
+    me.last_name = "Arp"
+    me.email="jarp@nd.edu"
+    me.is_admin = true
+    me.password="farkle"
+    me.save
+  end
 
 end
