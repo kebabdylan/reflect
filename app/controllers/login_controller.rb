@@ -10,7 +10,6 @@ def index
 end
   
 
-
 def login
 
 end
@@ -26,7 +25,6 @@ end
   
 def authenticate
     session[:user] = nil
-   
     @thisUser = User.authenticate(params[:email], params[:password])
     
 	if params[:goto]
