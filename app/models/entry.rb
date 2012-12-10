@@ -8,7 +8,7 @@ class Entry < ActiveRecord::Base
   
 
   def self.get_active (userid)
-    Entry.where("user_id = ? and is_complete <> 1",userid )
+    Entry.where("user_id = ? and is_complete <> true",userid )
   end
 
 
