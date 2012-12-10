@@ -19,14 +19,22 @@ class ApplicationController < ActionController::Base
   def setup
     
     # create admin user
-    #me = User.new
-    #me.first_name = "Jonathan"
-    #me.last_name = "Arp"
-    #me.email="jarp@nd.edu"
-    #me.is_admin = true
-    #me.password="farkle"
-    #me.save
-  
+    
+    users = User.all
+    
+    unless users.length > 0
+    
+    me = User.new
+    me.first_name = "Jonathan"
+    me.last_name = "Arp"
+    me.email="jarp@nd.edu"
+    me.is_admin = true
+    me.password="farkle"
+    me.save
+
+    render :json => "new"
+
+  end
     #create a topic
     #topic = Topic.new
     #topic.title = "Why are you here?"

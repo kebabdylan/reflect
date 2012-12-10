@@ -7,7 +7,7 @@ class EntriesController < ApplicationController
     @topics = Topic.all   
   
     if session[:is_admin]
-      @entries = Entry.where("is_complete not null and user_id <> ?",  session[:userid])
+      @entries = Entry.where("is_complete IS NOT NULL and user_id <> ?",  session[:userid])
     else
   	  @entries = Entry.where("user_id = ?", session[:userid])
     end

@@ -5,11 +5,13 @@ class HomeController < ApplicationController
 
 	def index
     @user = User.find(session[:userid])
-    entryIDs = Entry.where("user_id = ? and is_complete <> true",[session[:userid]]).map {|x| x.id}
+    # get all entries that are complete
+    entryIDs = Entry.where("user_id = ? and is_complete = true",[session[:userid]]).map {|x| x.id}
 	  
     #get entries that need to be completed  
     @active_entries = Entry.get_active(session[:userid])
-    #get comments for this person
+
+    #get comments for this person for all entries completed
 	  @comments = Comment.where(:entry_id=>entryIDs)
    
     respond_to do |format|
