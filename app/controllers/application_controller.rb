@@ -28,11 +28,11 @@ class ApplicationController < ActionController::Base
     #me.save
   
     #create a topic
-    topic = Topic.new
-    topic.title = "Why are you here?"
-    topic.questions = "Why are you taking this class? What do you hope to get out of it?"
-    topic.due_on='1/20/2013'
-    topic.active_on='12/1/2012'
+    #topic = Topic.new
+    #topic.title = "Why are you here?"
+    #topic.questions = "Why are you taking this class? What do you hope to get out of it?"
+    #topic.due_on='1/20/2013'
+    #topic.active_on='12/1/2012'
     
   
   
